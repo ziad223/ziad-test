@@ -19,19 +19,16 @@ export default function WorkOrdersList({ workOrders }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-      <div className="overflow-x-auto">
-        {workOrders.map((order, index) => (
+      <div className="divide-y divide-gray-100">
+        {workOrders.map((order) => (
           <div
             key={order.id}
-            className={`
-              flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors
-              ${index !== 0 ? 'border-t border-gray-100' : ''}
-            `}
+            className="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
           >
             {/* Car Icon + Status Indicator */}
             <div className="relative flex-shrink-0">
               {order.status === 'on-hold' && (
-                <div className="absolute -top-1 -left-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                <div className="absolute -top-1 -left-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center z-10">
                   <span className="text-white text-xs font-bold">!</span>
                 </div>
               )}
@@ -42,19 +39,18 @@ export default function WorkOrdersList({ workOrders }) {
 
             {/* Customer Info */}
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-gray-800 truncate">{order.customerName}</h3>
-              <p className="text-sm text-gray-500 truncate">
-                {order.vehicleBrand} {order.vehicleModel}
+              <h3 className="font-bold text-gray-900 text-base">{order.customerName}</h3>
+              <p className="text-sm text-gray-600">{order.vehicleBrand} {order.vehicleModel}</p>
+            </div>
+
+            {/* Order ID + Customer ID في سطر واحد */}
+            <div className={`px-4 py-2.5 rounded-lg ${getOrderIdBgColor(order.status)} flex-shrink-0 text-center`}>
+              <p className="font-bold text-sm text-gray-800 whitespace-nowrap">
+                {order.id} / {order.customerId}
               </p>
             </div>
 
-            {/* Order ID */}
-            <div className={`px-4 py-2 rounded-lg ${getOrderIdBgColor(order.status)} flex-shrink-0`}>
-              <p className="font-bold text-sm text-gray-800">{order.id} /</p>
-              <p className="font-bold text-sm text-gray-800">{order.customerId}</p>
-            </div>
-
-            {/* Icons */}
+            {/* Service Icons */}
             <div className="hidden md:flex items-center gap-2 flex-shrink-0">
               <MdLocationOn className="text-xl text-gray-400" />
               <MdLocalShipping className="text-xl text-gray-400" />
@@ -73,12 +69,12 @@ export default function WorkOrdersList({ workOrders }) {
 
             {/* Payment Status */}
             <div className="hidden xl:block flex-shrink-0">
-              <span className="text-orange-600 font-semibold">{order.paymentStatus}</span>
+              <span className="text-orange-600 font-semibold text-sm">{order.paymentStatus}</span>
             </div>
 
             {/* Dates */}
-            <div className="hidden xl:flex flex-col gap-1 flex-shrink-0 min-w-[140px]">
-              <div className={`px-3 py-1.5 rounded ${order.isStarted ? 'bg-blue-50' : 'bg-blue-50'}`}>
+            <div className="hidden xl:flex flex-col gap-1.5 flex-shrink-0 min-w-[140px]">
+              <div className="px-3 py-1.5 bg-blue-50 rounded">
                 <p className="text-xs font-semibold text-blue-600">
                   {order.isStarted ? order.startDate : 'Not Started yet'}
                 </p>
@@ -98,7 +94,7 @@ export default function WorkOrdersList({ workOrders }) {
 
             {/* Total Amount */}
             <div className="flex flex-col gap-1 flex-shrink-0 text-right min-w-[120px]">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-sm font-semibold text-gray-900">
                 Total: {order.totalAmount.toFixed(1)} AED
               </p>
               <p className={`text-sm font-semibold ${order.dueAmount > 0 ? 'text-red-600' : 'text-gray-600'}`}>

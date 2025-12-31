@@ -9,7 +9,7 @@ import WorkOrdersPagination from './WorkOrdersPagination';
 // بيانات وهمية
 const mockWorkOrders = [
   {
-    id: 'WO-25-12-0066',
+    id: '',
     customerId: 'C35631',
     customerName: 'Hafdafsad',
     vehicleBrand: 'Choverlet',
@@ -27,7 +27,7 @@ const mockWorkOrders = [
     isStarted: false,
   },
   {
-    id: 'WO-25-12-0063',
+    id: '',
     customerId: 'C35631',
     customerName: 'Hafdafsad',
     vehicleBrand: 'Choverlet',
@@ -45,7 +45,7 @@ const mockWorkOrders = [
     isStarted: false,
   },
   {
-    id: 'WO-25-10-8709',
+    id: '',
     customerId: 'DUBAIQ41017',
     customerName: 'UBAIDI MOTORS FZCO',
     vehicleBrand: 'Land Rover',
@@ -63,7 +63,7 @@ const mockWorkOrders = [
     isStarted: true,
   },
   {
-    id: 'WO-25-10-8700',
+    id: '',
     customerId: 'DUBAIF34889',
     customerName: 'Abduldaher',
     vehicleBrand: 'Hyundai',
@@ -81,7 +81,7 @@ const mockWorkOrders = [
     isStarted: true,
   },
   {
-    id: 'WO-25-10-8678',
+    id: '',
     customerId: 'DUBAIJ40075',
     customerName: 'Abdulla alsaadi',
     vehicleBrand: 'Honda',

@@ -10,7 +10,7 @@ import Pagination from './Pagination';
 const mockQuotations = [
   {
     id: 'SAL-QTN-2025-00443',
-    workOrderId: 'WO-25-12-0112',
+    workOrderId: '',
     customerName: 'Hafdafsad',
     vehicleType: 'Choverlet',
     status: 'ordered',
@@ -22,7 +22,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00442',
-    workOrderId: 'WO-25-12-0079',
+    workOrderId: '',
     customerName: 'أحمد العيسي',
     vehicleType: 'McLaren Pickup',
     status: 'draft',
@@ -34,7 +34,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00441',
-    workOrderId: 'WO-25-12-0067',
+    workOrderId: '',
     customerName: 'Muhammad',
     vehicleType: 'BMW Sedan',
     status: 'partially-ordered',
@@ -46,7 +46,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00440',
-    workOrderId: 'WO-25-12-0067',
+    workOrderId: '',
     customerName: 'Muhammad',
     vehicleType: 'BMW Sedan',
     status: 'cancelled',
@@ -58,7 +58,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00439',
-    workOrderId: 'WO-25-12-0104',
+    workOrderId: '',
     customerName: 'Ali Ahmed Ali',
     vehicleType: 'Toyota SUV',
     status: 'ordered',
@@ -70,7 +70,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00438',
-    workOrderId: 'WO-25-12-0102',
+    workOrderId: '',
     customerName: 'Mr tarek',
     vehicleType: 'Mazda Sedan',
     status: 'partially-ordered',
@@ -82,7 +82,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00437',
-    workOrderId: 'WO-25-12-0101',
+    workOrderId: '',
     customerName: 'Ahmed Ibrahim Ali',
     vehicleType: 'Haval Sedan',
     status: 'ordered',
@@ -94,7 +94,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00436',
-    workOrderId: 'WO-25-12-0100',
+    workOrderId: '',
     customerName: 'Hafdafsad',
     vehicleType: 'Choverlet',
     status: 'cancelled',
@@ -106,7 +106,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00435',
-    workOrderId: 'WO-25-12-0100',
+    workOrderId: '',
     customerName: 'Hafdafsad',
     vehicleType: 'Choverlet',
     status: 'cancelled',
@@ -118,7 +118,7 @@ const mockQuotations = [
   },
   {
     id: 'SAL-QTN-2025-00434',
-    workOrderId: 'WO-25-12-0095',
+    workOrderId: '',
     customerName: 'VIP RENT A CAR',
     vehicleType: 'Land Rover',
     status: 'partially-ordered',
