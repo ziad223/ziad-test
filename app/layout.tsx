@@ -20,8 +20,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       <body>
         <div className="min-h-screen bg-gray-50">
           <Sidebar 
-            isOpen={isSidebarOpen} 
-            setIsOpen={setIsSidebarOpen}
           />
           
           <div className={`transition-all duration-300 ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'}`}>

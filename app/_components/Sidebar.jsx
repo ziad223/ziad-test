@@ -1,15 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  MdDashboard, 
+import {
+  MdDashboard,
   MdAssignment,
   MdReceipt,
   MdWork,
   MdPointOfSale,
   MdCalendarToday,
-  MdThumbUp
+  MdThumbUp,
 } from 'react-icons/md';
 
 const menuItems = [
@@ -22,14 +23,15 @@ const menuItems = [
   { id: 7, title: 'Approvals', icon: MdThumbUp, href: '/approvals' },
 ];
 
-export default function Sidebar({ isOpen, setIsOpen }) {
+export default function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   return (
     <>
       {/* Overlay للموبايل */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
@@ -58,7 +60,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           )}
         </div>
 
-        {/* Menu Items */}
+        {/* Menu */}
         <nav className="mt-4 md:mt-6">
           {menuItems.map((item) => {
             const Icon = item.icon;
@@ -68,22 +70,21 @@ export default function Sidebar({ isOpen, setIsOpen }) {
               <Link
                 key={item.id}
                 href={item.href}
+                onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
                 className={`
                   flex items-center gap-4 px-4 py-3 md:py-3.5 transition-all duration-200
-                  ${isActive 
-                    ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' 
+                  ${isActive
+                    ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
                     : 'text-gray-700 hover:bg-gray-50'
                   }
                   ${!isOpen && 'justify-center'}
                 `}
-                onClick={() => {
-                  // للموبايل: اقفل السايدبار بعد الضغط
-                  if (window.innerWidth < 1024) {
-                    setIsOpen(false);
-                  }
-                }}
               >
-                <Icon className={`text-xl md:text-2xl flex-shrink-0 ${isActive ? 'text-blue-600' : 'text-gray-500'}`} />
+                <Icon
+                  className={`text-xl md:text-2xl flex-shrink-0 ${
+                    isActive ? 'text-blue-600' : 'text-gray-500'
+                  }`}
+                />
                 {isOpen && (
                   <span className="font-medium text-sm md:text-base whitespace-nowrap">
                     {item.title}
@@ -95,7 +96,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </nav>
       </aside>
 
-      {/* زر فتح السايدبار للموبايل */}
+      {/* زر الموبايل */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-4 left-4 z-40 bg-blue-600 text-white p-2 rounded-lg shadow-lg"
