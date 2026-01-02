@@ -1,28 +1,27 @@
-'use client';
+import type { Metadata } from 'next';
+import './globals.css';
+import Sidebar from './_components/Sidebar';
+import Header from './_components/Header';
 
-import { useState, ReactNode } from 'react';
-import Sidebar from './_components/Sidebar'
-import Header from './_components/Header'
+export const metadata: Metadata = {
+  title: 'ziad test',
+  description: 'Dashboard application',
+};
 
-interface DashboardLayoutProps {
-  children: ReactNode;
-}
-
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>ziad test</title>
       </head>
       <body>
         <div className="min-h-screen bg-gray-50">
-          <Sidebar 
-          />
-          
-          <div className={`transition-all duration-300 ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'}`}>
+          <Sidebar />
+          <div className="lg:ml-16">
             <Header />
             <main className="p-6">
               {children}

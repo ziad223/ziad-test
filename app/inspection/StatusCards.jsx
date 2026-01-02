@@ -50,7 +50,7 @@ export default function StatusCards({ stats, activeStatus, setActiveStatus }) {
               ${isActive ? card.activeColor : card.color}
               border-2 ${isActive ? card.activeColor.split(' ')[1] : card.borderColor}
               rounded-xl p-6 transition-all hover:shadow-lg cursor-pointer
-              transform hover:scale-105
+              transform 
             `}
           >
             <div className="flex items-center justify-between">
