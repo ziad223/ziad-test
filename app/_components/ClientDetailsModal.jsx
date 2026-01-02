@@ -123,7 +123,7 @@ export default function ClientDetailsModal({ isOpen, onClose }) {
           {/* Search Bar */}
           <div className="mb-6">
             <div className="relative">
-              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+              <div className="absolute left-4 top-10 transform -translate-y-1/2">
                 <MdQrCodeScanner className="text-2xl text-blue-600" />
               </div>
               <input
@@ -131,9 +131,9 @@ export default function ClientDetailsModal({ isOpen, onClose }) {
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-14 pr-12 py-3.5 border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                className="w-full pl-14 pr-12 py-3.5 text-black border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
               />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+              <div className="absolute right-4 top-10 transform -translate-y-1/2">
                 <MdKeyboard className="text-2xl text-gray-400" />
               </div>
             </div>

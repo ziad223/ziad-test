@@ -118,10 +118,10 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                       placeholder="اكتب اسمك هنا"
                       value={formData.nameArabic}
                       onChange={(e) => setFormData({...formData, nameArabic: e.target.value})}
-                      className="w-full px-4 py-3.5 border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
+                      className="w-full px-4 text-black py-3.5 border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
                       dir="rtl"
                     />
-                    <MdLanguage className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl" />
+                    <MdLanguage className="absolute left-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl" />
                   </div>
                 </div>
 
@@ -130,13 +130,13 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                     Name in English
                   </label>
                   <div className="relative">
-                    <MdPerson className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl" />
+                    <MdPerson className="absolute left-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl" />
                     <input
                       type="text"
                       placeholder="Name in English"
                       value={formData.nameEnglish}
                       onChange={(e) => setFormData({...formData, nameEnglish: e.target.value})}
-                      className="w-full pl-12 pr-4 py-3.5 border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400"
+                      className="w-full pl-12 pr-4 text-black py-3.5 border-2 border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 "
                     />
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                         Email
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl">
+                        <span className="absolute left-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl">
                           ✉️
                         </span>
                         <input
@@ -316,7 +316,7 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                         Country
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl">
+                        <span className="absolute left-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl">
                           🌍
                         </span>
                         <select
@@ -328,7 +328,7 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                           <option>Kuwait</option>
                           <option>Qatar</option>
                         </select>
-                        <MdKeyboardArrowDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl pointer-events-none" />
+                        <MdKeyboardArrowDown className="absolute right-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl pointer-events-none" />
                       </div>
                     </div>
 
@@ -338,7 +338,7 @@ export default function NewCustomerModal({ isOpen, onClose }) {
                         Address Line 1
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-600 text-xl">
+                        <span className="absolute left-4 top-10 transform -translate-y-1/2 text-blue-600 text-xl">
                           🏠
                         </span>
                         <input
